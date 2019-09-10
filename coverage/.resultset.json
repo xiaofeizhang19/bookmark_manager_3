@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/thomas_ross100/Projects/skills-workshops/week-4/bookmark_manager/spec/bookmark_spec.rb": [
+      "/Users/michael/Projects/bookmark_manager_2/spec/bookmark_spec.rb": [
         1,
         null,
         1,
@@ -13,20 +13,34 @@
         1,
         1,
         null,
+        1,
         null,
-        null
-      ],
-      "/Users/thomas_ross100/Projects/skills-workshops/week-4/bookmark_manager/spec/feature/bookmarks_spec.rb": [
         1,
         1,
         1,
-        1,
-        1,
-        1,
+        null,
         null,
         null
       ],
-      "/Users/thomas_ross100/Projects/skills-workshops/week-4/bookmark_manager/spec/feature/index_spec.rb": [
+      "/Users/michael/Projects/bookmark_manager_2/spec/feature/bookmarks_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/michael/Projects/bookmark_manager_2/spec/feature/index_spec.rb": [
         null,
         null,
         1,
@@ -37,6 +51,6 @@
         null
       ]
     },
-    "timestamp": 1568124310
+    "timestamp": 1568131314
   }
 }
