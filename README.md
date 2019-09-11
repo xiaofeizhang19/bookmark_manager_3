@@ -5,10 +5,23 @@ For the original challenge refer to: [bookmark manager](https://github.com/maker
 ## User Stories
 
 USER STORY 1
-
+```
 As a user
 So that I can see all my favourite web pages
 I would like to see a personalised list of bookmarks
+```
+USER STORY 2
+```
+As a user
+So that I can save a web page
+I would like to add a bookmark
+```
+USER STORY 3
+```
+As a user
+So that I can remove my bookmark from Bookmark Manager
+I would like to delete a bookmark
+```
 
 DATABASE SETUP INSTRUCTIONS:
 

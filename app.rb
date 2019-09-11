@@ -5,7 +5,7 @@ require './lib/bookmark.rb'
 
 # BookmarkManager inherits from Sinatra/Base
 class BookmarkManager < Sinatra::Base
-  enable :sessions
+  enable :sessions, :method_override
 
   get '/' do
     erb :index
@@ -29,13 +29,10 @@ class BookmarkManager < Sinatra::Base
     redirect '/bookmarks'
   end
 
-  get '/delete' do
-    erb :delete
-  end
-
-  post '/delete_confirmation' do
-    Bookmark.delete(params[:title])
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params[:id])
     redirect '/bookmarks'
+    p params
   end
 
 end

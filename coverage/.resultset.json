@@ -30,6 +30,14 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/xiaofeizhang/Projects/week-4/bookmark_manager_3/spec/database_helper.rb": [
@@ -78,8 +86,6 @@
         null,
         1,
         1,
-        1,
-        1,
         null,
         1,
         1,
@@ -96,6 +102,6 @@
         null
       ]
     },
-    "timestamp": 1568216287
+    "timestamp": 1568219461
   }
 }
