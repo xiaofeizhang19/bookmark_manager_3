@@ -11,8 +11,7 @@ feature 'add bookmark' do
   fill_in :title, with: 'Cosmopolitan'
   click_button 'Add to bookmarks'
 
-  expect(page).to have_content 'Cosmopolitan'
-  expect(page).to have_link 'http://www.cosmopolitan.com'
+  expect(page).to have_link('Cosmopolitan', href: 'http://www.cosmopolitan.com')
   expect(page).to have_content 'Makers Academy'
   expect(page).to have_content 'Google Homepage'
   expect(page).to have_content 'Destroy all Software Homepage'

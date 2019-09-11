@@ -7,11 +7,8 @@ feature 'bookmarks' do
 
     visit('/bookmarks')
 
-    expect(page).to have_content 'Makers Academy'
-    expect(page).to have_content 'Destroy all Software Homepage'
-    expect(page).to have_content 'Google Homepage'
-    expect(page).to have_link 'http://www.makersacademy.com'
-    expect(page).to have_link 'http://www.google.com'
-    expect(page).to have_link 'http://www.destroyallsoftware.com'
+    expect(page).to have_link('Makers Academy', href: 'http://www.makersacademy.com')
+    expect(page).to have_link('Destroy all Software Homepage', href: 'http://www.destroyallsoftware.com')
+    expect(page).to have_link('Google Homepage', href: 'http://www.google.com')
   end
 end

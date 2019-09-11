@@ -1,4 +1,5 @@
 require 'bookmark'
+require 'database_helper'
 
 describe Bookmark do
   describe '.all' do
@@ -17,16 +18,12 @@ describe Bookmark do
 
   describe '.add' do
     it 'adds a bookmark to the database' do
-    Bookmark.add('Makers Academy', 'http://www.makersacademy.com')
-    Bookmark.add('Destroy all Software Homepage', 'http://www.destroyallsoftware.com')
-    Bookmark.add('Google Homepage', 'http://www.google.com')
-    Bookmark.add('Microsoft Homepage', 'http://www.microsoft.com')
-    bookmarks = Bookmark.all
-
-    expect(bookmarks).to include('http://www.makersacademy.com')
-    expect(bookmarks).to include('http://www.google.com')
-    expect(bookmarks).to include('http://www.destroyallsoftware.com')
-    expect(bookmarks).to include('http://www.XXX.com')
+      bookmark = Bookmark.add('Microsoft Homepage', 'http://www.microsoft.com')
+      persisted_data = persisted_data(id: bookmark.id)
+      expect(bookmark).to be_a Bookmark
+      expect(bookmark.id).to eq persisted_data.first['id']
+      expect(bookmark.title).to eq 'Microsoft Homepage'
+      expect(bookmark.url).to eq 'http://www.microsoft.com'
     end
   end
 end
