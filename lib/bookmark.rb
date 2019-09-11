@@ -10,26 +10,28 @@ class Bookmark
   end
 
   def self.all
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-    else
-      connection = PG.connect(dbname: 'bookmark_manager')
-    end
-
+    connection = self.connect
     result = connection.exec("SELECT * FROM bookmarks")
-
     result.map do |bookmark|
       Bookmark.new(bookmark['id'], bookmark['title'], bookmark['url'])
     end
   end
 
   def self.add(title, url)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-    else
-      connection = PG.connect(dbname: 'bookmark_manager')
-    end
+    connection = self.connect
     result = connection.exec("INSERT INTO bookmarks (title, url) VALUES ('#{title}', '#{url}') RETURNING id, title, url")
     Bookmark.new(result[0]['id'], result[0]['title'], result[0]['url'])
+  end
+
+  def self.delete(title)
+    connection = self.connect
+    connection.exec("DELETE FROM bookmarks WHERE title = '#{title}'")
+  end
+
+  private_class_method
+
+  def self.connect
+    return PG.connect(dbname: 'bookmark_manager_test') if ENV['ENVIRONMENT'] == 'test'
+    PG.connect(dbname: 'bookmark_manager')
   end
 end
