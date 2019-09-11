@@ -16,13 +16,22 @@ class BookmarkManager < Sinatra::Base
     erb :'bookmarks/index'
   end
 
+  get '/add' do
+    erb :add
+  end
+
   post '/confirmation' do
     Bookmark.add(params[:title], params[:url])
     redirect '/bookmarks'
   end
 
-  get '/add' do
-    erb :add
+  get '/delete' do
+    erb :delete
+  end
+
+  post '/delete_confirmation' do
+    Bookmark.delete(params[:title])
+    redirect '/bookmarks'
   end
 
 end
