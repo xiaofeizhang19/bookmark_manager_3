@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 ENV['ENVIRONMENT'] = 'test'
 
 ENV['RACK_ENV'] = 'test'
@@ -43,7 +42,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     setup_test_database
-  end 
+  end
 
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
